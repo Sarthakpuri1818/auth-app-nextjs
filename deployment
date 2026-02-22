@@ -1,0 +1,9 @@
+go on vercel
+go on domain url add domain name of databadse on mongo databadse
+add your domain URI you have on env file
+add your token secret 
+add domain localhost or decide a name of domain and add it 
+
+after you get confetti add the domain in the environment variable
+
+

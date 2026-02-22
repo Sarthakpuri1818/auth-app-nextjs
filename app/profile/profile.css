@@ -1,0 +1,82 @@
+/* profile.css */
+
+:root {
+  --bg1: #0f172a;
+  --bg2: #1e293b;
+  --card: rgba(255, 255, 255, 0.08);
+  --border: rgba(255, 255, 255, 0.15);
+  --text: #f8fafc;
+  --muted: rgba(255, 255, 255, 0.65);
+  --accent: #6366f1;
+  --danger: #ef4444;
+  --radius: 18px;
+}
+
+/* Full page background */
+body {
+  background: linear-gradient(135deg, var(--bg1), var(--bg2));
+  min-height: 100vh;
+  margin: 0;
+  font-family: "Inter", sans-serif;
+}
+
+/* Card container */
+.sign {
+  max-width: 500px;
+  margin: 120px auto;
+  padding: 40px;
+  border-radius: var(--radius);
+  background: var(--card);
+  backdrop-filter: blur(18px);
+  -webkit-backdrop-filter: blur(18px);
+  border: 1px solid var(--border);
+  box-shadow: 0 30px 60px rgba(0, 0, 0, 0.45);
+  text-align: center;
+  color: var(--text);
+}
+
+/* Title */
+.sign h1 {
+  font-size: 28px;
+  font-weight: 800;
+  margin-bottom: 12px;
+  letter-spacing: -0.5px;
+}
+
+/* Paragraph */
+.sign p {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.6;
+}
+
+/* Divider */
+.sign hr {
+  border: none;
+  border-top: 1px solid var(--border);
+  margin: 20px 0;
+}
+
+/* Logout Button */
+.btn {
+  margin-top: 20px;
+  padding: 12px 24px;
+  border-radius: 12px;
+  border: none;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  color: white;
+  background: linear-gradient(135deg, var(--accent), #4f46e5);
+  transition: all 0.2s ease;
+  box-shadow: 0 10px 25px rgba(99, 102, 241, 0.35);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 15px 35px rgba(99, 102, 241, 0.5);
+}
+
+.btn:active {
+  transform: scale(0.98);
+}
