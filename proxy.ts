@@ -12,9 +12,9 @@ export function proxy(request: NextRequest) {
   const token = request.cookies.get("token")?.value || "";
 
     // ✅ Handle root "/"
-  if (path === "/") {
-    // If logged in go profile, else go signup
-    return NextResponse.redirect(new URL(token ? "/profile" : "/signup", request.url));
+  if (path === '/'){
+    return NextResponse.redirect(new URL('/signup',request.url))
+
   }
 
 
@@ -34,7 +34,7 @@ export function proxy(request: NextRequest) {
 // 5. Matcher Configuration
 export const config = {
   matcher: [
-    
+    "/",
     "/profile/:path*", // Matches /profile and any sub-paths
     "/login",
     "/signup",
