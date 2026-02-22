@@ -1,7 +1,7 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 
-export function middleware(request: NextRequest) {
+export function proxy(request: NextRequest) {
   const path = request.nextUrl.pathname;
 
   // 1. Define public paths
@@ -13,7 +13,7 @@ export function middleware(request: NextRequest) {
 
   // 3. Logic: Redirect authenticated users away from public pages 
   if (isPublicPath && token) {
-    return NextResponse.redirect(new URL("/", request.nextUrl));
+    return NextResponse.redirect(new URL("/profile", request.nextUrl));
   }
 
   // 4. Logic: Redirect unauthenticated users to login if they try to access private pages
@@ -27,7 +27,7 @@ export function middleware(request: NextRequest) {
 // 5. Matcher Configuration
 export const config = {
   matcher: [
-    "/",
+    
     "/profile/:path*", // Matches /profile and any sub-paths
     "/login",
     "/signup",
